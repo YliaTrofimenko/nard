@@ -1,0 +1,53 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block CSS %}
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+{% endblock CSS %}
+
+{% block CONTENT %}
+<div class="container">
+    <div class="areaA1">
+        <button href="{% url "main:home" %}">Создать игру</button>
+    </div>
+    <div class="areaA2">
+        <button>Турниры</button>
+    </div>
+    <div class="areaA3">
+        <button>Лидеры</button>
+    </div>
+    <div class="areaA4">
+        <table>
+            <thead>
+                <tr>
+                    <td>Ник</td>
+                    <td>Рейтинг</td>
+                    <td>Тип игры</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Давид</td>
+                    <td>2406</td>
+                    <td>Короткие</td>
+                </tr>
+                <tr>
+                    <td>Артур</td>
+                    <td>1946</td>
+                    <td>Длинные</td>
+                </tr>
+                <tr>
+                    <td>Арсен</td>
+                    <td>1700</td>
+                    <td>Длинные</td>
+                </tr>
+                <tr>
+                    <td>Карен</td>
+                    <td>1426</td>
+                    <td>Длинные</td>
+                </tr>
+            </tbody>
+    </table>
+    </div>
+  </div>
+{% endblock CONTENT %}

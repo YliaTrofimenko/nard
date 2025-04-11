@@ -1,0 +1,119 @@
+:root {
+    --color-black: #000000;
+    --color-basic: #C2CBA0;
+    --color-light-basic: #f1f7dc;
+    --color-selection: #00000010;
+    --color-menu: #a1ac7c;
+    --color-menu-selection: #C2CBA0;
+    --color-submenu: #a1ac7c;
+    --color-submenu-selection: #C2CBA0;
+
+	--width-menu: 200px;
+}
+
+
+body {
+    margin: 0;                          /* Отступы от краёв экрана */
+    background: var(--color-basic);        /* Фоновый цвет страницы */
+}
+
+.body {
+    margin-left: var(--width-menu);
+    padding: 20px;
+}
+
+p, span, label, a, caption, button {
+	font-weight: bold;
+    font-size: 16px;           /* Размер шрифта */
+    font-family: Arial;        /* Шрифт */
+    margin: 0;                 /* Убираем отступы */
+    padding: 0;                /* Убираем отступы */
+    color: var(--color-black);
+}
+
+p, span, label, caption {
+    cursor: default;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    cursor: default;
+}
+
+td {
+    border: 1px solid var(--color-black);
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+table tr {
+  height: 40px;
+}
+
+/* Эффект при наведении на строку */
+tbody tr:hover {
+  background-color: var(--color-selection);
+}
+
+nav {
+	position: fixed;
+	z-index: 100;
+	margin: 0;
+	width: var(--width-menu);
+	height: 100vh;
+	background-color: var(--color-menu);
+	color: var(--color-black);
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul > li {
+    position: relative;
+}
+
+ul > li > a {
+	display: block;
+	padding: 15px 20px;
+	text-decoration: none;
+	background-color: none;
+}
+
+ul > li > a:hover {
+    background-color: var(--color-menu-selection);
+}
+
+/* Подменю */
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: var(--color-submenu);
+    min-width: var(--width-menu);
+    z-index: 1000;
+}
+
+.submenu li a {
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background-color: var(--color-submenu-selection);
+}
+
+/* Показываем подменю при наведении */
+ul > li:hover .submenu {
+    display: block;
+}

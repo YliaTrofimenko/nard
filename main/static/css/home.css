@@ -1,0 +1,29 @@
+button {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+/* ------------------------------------------------------------ */
+
+.container {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 1fr;
+    grid-template-rows: 40vh 40vh;
+    gap: 35px 35px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "areaA1 areaA2 areaA4"
+        "areaA3 areaA3 areaA4";
+}
+.areaA1 { grid-area: areaA1; }
+.areaA2 { grid-area: areaA2; }
+.areaA3 { grid-area: areaA3; }
+.areaA4 { grid-area: areaA4; }
+
+.areaA1, .areaA2, .areaA3, .areaA4 {
+    background-color: var(--color-light-basic);
+    border-radius: 40px;
+}
