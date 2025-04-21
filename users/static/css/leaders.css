@@ -1,0 +1,45 @@
+.tabLeader > input[type="radio"] {
+    display: none;
+}
+
+.tab-content {
+    display: none;
+}
+
+#tab-btn-1:checked~#ratingAll,
+#tab-btn-2:checked~#ratingMonth {
+    display: block;
+}
+
+.btn {
+  background-color: var(--color-batton);  /* Цвет фона кнопки */
+  color: black;            /* Цвет текста кнопки */
+  border: none;              /* Убираем обводку */
+  padding: 1.05vh 1.4vw;        /* Внутренние отступы */
+  margin: 0 0.8vw;            /* Отступы между кнопками */
+  cursor: pointer;           /* Указывает, что это интерактивный элемент */
+  border-radius: 5px;        /* Скругление углов кнопок */
+  font-weight: bold;         /* Жирный шрифт текста кнопки */
+  font-size: 14px;           /* Размер шрифта кнопки */
+}
+
+.btn:hover, .dropdown:hover {
+  background-color: #bfcc94;  /* Изменение цвета при наведении */
+}
+
+.tabLeader > input[type="radio"]:checked + label {
+    color: red;
+}
+
+
+.containerA {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 40px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "areaA1 areaA2";
+}
+.areaA1 { grid-area: areaA1; }
+.areaA2 { grid-area: areaA2; }

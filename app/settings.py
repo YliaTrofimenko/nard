@@ -127,6 +127,9 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
+    BASE_DIR / 'users/static',
+    BASE_DIR / 'game/static',
+    BASE_DIR / 'tournaments/static',
 ]
 
 # Default primary key field type

@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block CSS %}
+    <link rel="stylesheet" href="{% static "css/profile.css" %}">
+{% endblock CSS %}
+
+{% block CONTENT %}
+<div class="profile-container">
+    <div class="profile-header">
+        <img src="{{ user.profile.avatar.url }}" alt="Аватар" class="avatar">
+        <h2>{{ user.username }}</h2>
+        <p>Рейтинг: {{ user.profile.rating }}</p>
+        {% if request.user == user %}
+            <a href="#" class="btn">Редактировать профиль</a>
+        {% endif %}
+    </div>
+
+    <div class="profile-stats">
+        <h3>Статистика</h3>
+        <ul>
+            <li>Игр всего: {{ user.profile.total_games }}</li>
+            <li>Побед: {{ user.profile.wins }}</li>
+            <li>Поражений: {{ user.profile.losses }}</li>
+        </ul>
+    </div>
+</div>
+{% endblock CONTENT %}

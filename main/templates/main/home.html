@@ -5,16 +5,63 @@
     <link rel="stylesheet" href="{% static "css/home.css" %}">
 {% endblock CSS %}
 
+{% block JS %}
+    <script type="module" src="{% static 'js/home.js' %}"></script>
+{% endblock JS %}
+
 {% block CONTENT %}
-<div class="container">
+<div class="containerA">
     <div class="areaA1">
-        <button href="{% url "main:home" %}">Создать игру</button>
+        <button id="btnCreateGame">Создать игру</button>
     </div>
     <div class="areaA2">
         <button>Турниры</button>
     </div>
     <div class="areaA3">
-        <button>Лидеры</button>
+        <div class="areaA3-1">
+            <p>Короткие нарды</p>
+            <table class="leaders">
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Давид</td>
+                        <td>2406</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Артур</td>
+                        <td>1946</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Арсен</td>
+                        <td>1700</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="areaA3-2">
+            <p>Длинные нарды</p>
+            <table class="leaders">
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Давид</td>
+                        <td>2406</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Артур</td>
+                        <td>1946</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Арсен</td>
+                        <td>1700</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="areaA4">
         <table>
@@ -47,7 +94,7 @@
                     <td>Длинные</td>
                 </tr>
             </tbody>
-    </table>
+        </table>
     </div>
   </div>
 {% endblock CONTENT %}

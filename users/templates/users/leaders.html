@@ -1,0 +1,110 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block CSS %}
+    <link rel="stylesheet" href="{% static "css/leaders.css" %}">
+{% endblock CSS %}
+
+{% block CONTENT %}
+    <h1>Таблица лидеров по рейтингу</h1>
+    <div class="tabLeader">
+        <input checked id="tab-btn-1" type="radio" name="tab-btn">
+        <label class="btn" for="tab-btn-1">Рейтинг за все время</label>
+        <input id="tab-btn-2" type="radio" name="tab-btn">
+        <label class="btn" for="tab-btn-2">Рейтинг за месяц</label>
+
+        <div class="tab-content" id="ratingAll">
+            <div class="containerA">
+                <div class="areaA1">
+                    <h2>Топ лучших игроков</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th colspan='2'>Шахматист</th>
+                                <th colspan='2'>Рейтинг</th>
+                                <th colspan='2'>Задачи</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for data in leaderboard %}
+                                <tr onclick="document.location = {{ data.0 }}">
+                                    <td>{{ data.1 }}</td>
+                                    <td><div style="background-image: url({{ data.2 }})"></div></td>
+                                    <td>{{ data.3 }}</td>
+                                    <td>{{ data.4 }}</td>
+                                    <td>+{{ data.5 }}</td>
+                                    <td>{{ data.6 }}</td>
+                                    <td>+{{ data.7 }}</td>
+                                </tr>
+                            {% endfor %}
+                            {% comment %} <tr onclick="document.location = '/user/Серый Волк';"> {% endcomment %}
+                            {% comment %} <div class="row-avatar" style="background-image: url('/img/noavatar.png')"></div> {% endcomment %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="areaA2">
+                    <h2>Мое положение</h2>
+                    <table>
+                        <tr>
+                            <td>По рейтингу</td>
+                            <td>{{ place_in_rating }} / {{ rating }}</td>
+                        </tr>
+                        <tr>
+                            <td>Средний рейтинг игроков</td>
+                            <td>{{ place_in_rating }} / {{ rating }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="ratingMonth">
+            <div class="containerA">
+                <div class="areaA1">
+                    <h2>Топ лучших игроков за месяц</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th colspan='2'>Шахматист</th>
+                                <th colspan='2'>Рейтинг</th>
+                                <th colspan='2'>Задачи</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for data in leaderboard %}
+                                <tr onclick="document.location = {{ data.0 }}">
+                                    <td>{{ data.1 }}</td>
+                                    <td><div style="background-image: url({{ data.2 }})"></div></td>
+                                    <td>{{ data.3 }}</td>
+                                    <td>{{ data.4 }}</td>
+                                    <td>+{{ data.5 }}</td>
+                                    <td>{{ data.6 }}</td>
+                                    <td>+{{ data.7 }}</td>
+                                </tr>
+                            {% endfor %}
+                            {% comment %} <tr onclick="document.location = '/user/Серый Волк';"> {% endcomment %}
+                            {% comment %} <div class="row-avatar" style="background-image: url('/img/noavatar.png')"></div> {% endcomment %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="areaA2">
+                    <h2>Мое положение</h2>
+                    <table>
+                        <tr>
+                            <td>По рейтингу</td>
+                            <td>{{ place_in_rating }} / {{ rating }}</td>
+                        </tr>
+                        <tr>
+                            <td>Средний рейтинг игроков</td>
+                            <td>{{ place_in_rating }} / {{ rating }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock CONTENT %}

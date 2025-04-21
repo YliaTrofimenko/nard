@@ -1,0 +1,36 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block CSS %}
+    <link rel="stylesheet" href="{% static "css/create_game.css" %}">
+{% endblock CSS %}
+
+{% block CONTENT %}
+<h1 style="font-size: 24px; margin-bottom: 20px;">Создание новой игры</h1>
+    <form class="form-container">
+        <div class="form-group">
+            <label>Тип игры</label>
+            <select>
+                <option>Короткие нарды</option>
+                <option>Длинные нарды</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Приватность</label>
+            <select>
+                <option>Публичная</option>
+                <option>По приглашению</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Комментарий (необязательно)</label>
+            <input type="text" placeholder="Например: 'Жду опытного соперника'">
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Создать игру</button>
+        </div>
+    </form>
+{% endblock CONTENT %}

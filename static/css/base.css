@@ -46,19 +46,20 @@ table {
 }
 
 td {
-    border: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--color-black);
     text-align: center;
     font-size: 16px;
     font-family: Arial;
 }
 
 table tr {
-  height: 40px;
+    height: 40px;
 }
 
-/* Эффект при наведении на строку */
+/* ------------ МЕНЮ --------------- */
+
 tbody tr:hover {
-  background-color: var(--color-selection);
+    background-color: var(--color-selection);
 }
 
 nav {
@@ -92,7 +93,6 @@ ul > li > a:hover {
     background-color: var(--color-menu-selection);
 }
 
-/* Подменю */
 .submenu {
     display: none;
     position: absolute;

@@ -10,14 +10,14 @@
     {% block CSS %}{% endblock CSS %}
 
     {% block JS %}{% endblock JS %}
-    <title>Document</title>
+    <title>Нарды</title>
 </head>
 
 <body>
     <nav>
         <ul>
-            <li> <a href="#">Главная</a> </li>
-            <li> <a href="#">Играть</a>
+            <li> <a href="{% url "main:home" %}">Главная</a> </li>
+            <li> <a href="{% url "game:create_game" %}">Играть</a>
                 <ul class="submenu">
                     <li><a href="#">Длинные</a></li>
                     <li><a href="#">Короткие</a></li>
@@ -30,7 +30,7 @@
                 </ul>
             </li>
             <li> <a href="#">Лидеры</a> </li>
-            <li> <a href="#">Настройки</a> </li>
+            <li> <a href="{% url "users:profile" %}">Настройки</a> </li>
         </ul>
     </nav>
     <div class="body">

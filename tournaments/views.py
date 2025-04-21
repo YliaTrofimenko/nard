@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+def tournaments(request):
+    html_context = {
+        'user_name': 'Юля',
+    }
+    return render(request, 'tournaments/tournaments.html', html_context)
