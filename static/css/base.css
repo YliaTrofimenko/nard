@@ -8,6 +8,8 @@
     --color-submenu: #a1ac7c;
     --color-submenu-selection: #C2CBA0;
 
+    --color-button: #a1ac7c;
+
 	--width-menu: 200px;
 }
 
@@ -22,7 +24,7 @@ body {
     padding: 20px;
 }
 
-p, span, label, a, caption, button {
+p, span, label, a, caption, button, h1 {
 	font-weight: bold;
     font-size: 16px;           /* Размер шрифта */
     font-family: Arial;        /* Шрифт */
@@ -35,8 +37,17 @@ p, span, label, caption {
     cursor: default;
 }
 
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
 a, button {
     cursor: pointer;
+}
+
+button {
+    background-color: var(--color-button);
 }
 
 table {

@@ -23,13 +23,13 @@
                     <li><a href="#">Короткие</a></li>
                 </ul>
             </li>
-            <li> <a href="#">Турниры</a>
+            <li> <a href="{% url "tournaments:tournaments" %}">Турниры</a>
                 <ul class="submenu">
                     <li><a href="#">Текущие</a></li>
                     <li><a href="#">Будущие</a></li>
                 </ul>
             </li>
-            <li> <a href="#">Лидеры</a> </li>
+            <li> <a href="{% url "users:leaders" %}">Лидеры</a> </li>
             <li> <a href="{% url "users:profile" %}">Настройки</a> </li>
         </ul>
     </nav>

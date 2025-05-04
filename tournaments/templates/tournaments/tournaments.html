@@ -2,43 +2,51 @@
 {% load static %}
 
 {% block CSS %}
-    <link rel="stylesheet" href="{% static "css/create_game.css" %}">
+<link rel="stylesheet" href="{% static "css/leaders.css" %}">
 {% endblock CSS %}
 
 {% block CONTENT %}
-<div class="tournaments-container">
-    <h1>Турниры</h1>
+<h1>Турниры</h1>
+    <div class="tabLeader">
+        <input checked id="tab-btn-1" type="radio" name="tab-btn">
+        <label class="btn" for="tab-btn-1">Предстоящие турниры</label>
+        <input id="tab-btn-2" type="radio" name="tab-btn">
+        <label class="btn" for="tab-btn-2">Прошедшие турниры</label>
 
-    <section class="upcoming-tournaments">
-        <h2>Предстоящие турниры</h2>
-        <div class="tournament-card">
-            <h3>Весенний Кубок</h3>
-            <p>Дата: 5 мая 2025</p>
-            <p>Участников: 16 / 32</p>
-            <button class="btn">Присоединиться</button>
+        <div class="tab-content" id="ratingAll">
+            <section class="upcoming-tournaments">
+                <h2>Предстоящие турниры</h2>
+                <div class="tournament-card">
+                    <h3>Весенний Кубок</h3>
+                    <p>Дата: 5 мая 2025</p>
+                    <p>Участников: 16 / 32</p>
+                    <button class="btn">Присоединиться</button>
+                </div>
+        
+                <div class="tournament-card">
+                    <h3>Блиц Турнир</h3>
+                    <p>Дата: 12 мая 2025</p>
+                    <p>Участников: 8 / 16</p>
+                    <button class="btn">Присоединиться</button>
+                </div>
+            </section>
         </div>
 
-        <div class="tournament-card">
-            <h3>Блиц Турнир</h3>
-            <p>Дата: 12 мая 2025</p>
-            <p>Участников: 8 / 16</p>
-            <button class="btn">Присоединиться</button>
+        <div class="tab-content" id="ratingMonth">
+            <section class="past-tournaments">
+                <h2>Прошедшие турниры</h2>
+                <div class="tournament-card past">
+                    <h3>Зимний Турнир</h3>
+                    <p>Дата: 10 февраля 2025</p>
+                    <p>Победитель: <strong>BackgammonKing</strong></p>
+                </div>
+        
+                <div class="tournament-card past">
+                    <h3>Новогодний Кубок</h3>
+                    <p>Дата: 25 декабря 2024</p>
+                    <p>Победитель: <strong>LuckyDice</strong></p>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <section class="past-tournaments">
-        <h2>Прошедшие турниры</h2>
-        <div class="tournament-card past">
-            <h3>Зимний Турнир</h3>
-            <p>Дата: 10 февраля 2025</p>
-            <p>Победитель: <strong>BackgammonKing</strong></p>
-        </div>
-
-        <div class="tournament-card past">
-            <h3>Новогодний Кубок</h3>
-            <p>Дата: 25 декабря 2024</p>
-            <p>Победитель: <strong>LuckyDice</strong></p>
-        </div>
-    </section>
-</div>
+    </div>
 {% endblock CONTENT %}
