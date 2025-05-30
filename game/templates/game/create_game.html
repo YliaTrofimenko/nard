@@ -6,31 +6,55 @@
 {% endblock CSS %}
 
 {% block CONTENT %}
-<h1 style="font-size: 24px; margin-bottom: 20px;">Создание новой игры</h1>
-    <form class="form-container">
-        <div class="form-group">
-            <label>Тип игры</label>
-            <select>
-                <option>Короткие нарды</option>
-                <option>Длинные нарды</option>
-            </select>
-        </div>
+    <form class="form-container" action="{% url 'game:new_game' %}" method="post">
+        {% csrf_token %}
+        <h1 style="font-size: 24px; margin-bottom: 20px;">Создание новой игры</h1>
+        {% comment %} <fieldset class='fieldsetGlav'>
+            <legend>Противник:</legend>
+            <div>
+                <input type="radio" id="1" checked />
+                <label for="1">Компьютер</label>
+            </div>
+            <div>
+                <input type="radio" id="2"/>
+                <label for="2">Найти соперника</label>
+            </div>
+            <div>
+                <input type="radio" id="3"/>
+                <label for="3">Приглашение</label>
+            </div>
+        </fieldset> {% endcomment %}
 
-        <div class="form-group">
-            <label>Приватность</label>
-            <select>
-                <option>Публичная</option>
-                <option>По приглашению</option>
-            </select>
-        </div>
+        <fieldset class='fieldsetGlav'>
+            <legend>Тип игры:</legend>
+            <div>
+                <input name="game_type" value="short" type="radio" id="type-short" checked />
+                <label for="4">Короткие нарды</label>
+            </div>
+            <div>
+                <input name="game_type" value="long" type="radio" id="type-long">
+                <label for="5">Длинные нарды</label>
+            </div>
+        </fieldset>
 
-        <div class="form-group">
-            <label>Комментарий (необязательно)</label>
-            <input type="text" placeholder="Например: 'Жду опытного соперника'">
-        </div>
+        <fieldset class='fieldsetGlav'>
+            <legend>Сторона:</legend>
+            <div>
+                <input type="radio" id="side-random" name="side" value="random" />
+                <label for="6">Случайно</label>
+            </div>
+            <div>
+                <input type="radio" id="side-white" name="side" value="white" checked />
+                <label for="7">Белые</label>
+            </div>
+            <div>
+                <input type="radio" id="side-black" name="side" value="black" />
+                <label for="8">Чёрные</label>
+            </div>
+        </fieldset>
 
-        <div class="form-group">
-            <button type="submit">Создать игру</button>
+        <div style="text-align: center;">
+            <button type="submit" class="btnAccent2">Создать игру</button>
         </div>
     </form>
 {% endblock CONTENT %}

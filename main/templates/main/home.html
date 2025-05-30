@@ -10,89 +10,90 @@
 {% endblock JS %}
 
 {% block CONTENT %}
+<div style="background-image: url({% static 'image/human.png' %})"></div>
 <div class="containerA">
-    <div class="areaA1">
+    <div class="areaA5">
         <button id="btnCreateGame">Создать игру</button>
     </div>
+    <div class="areaA1">
+        <button id="btnProfile">Профиль</button>
+    </div>
     <div class="areaA2">
-        <button>Турниры</button>
+        <p class="tableHeader">Последние турниры</p>
+        <table>
+            <tbody>
+                {% for data in tournaments %}
+                    <tr onclick="document.location = {{ data.9 }}">
+                        <td><div style="background-image: url({{ data.8 }})"></div></td>
+                        <td style="text-align: left; padding-left: 10px; width: 190px;">{{ data.0 }}</td>
+                        <td>{{ data.1 }}</td>
+                        <td style="text-align: left;">{{ data.2 }}</td>
+                        <td><img src="{% static 'image/human.png' %}" style="height: auto; width: 10px;"></td>
+                        <td style="text-align: left;">{{ data.3 }}</td>
+                    </tr>
+                {% endfor %}
+                {% comment %} <tr onclick="document.location = '/user/Серый Волк';"> {% endcomment %}
+                {% comment %} <div class="row-avatar" style="background-image: url('/img/noavatar.png')"></div> {% endcomment %}
+            </tbody>
+        </table>
     </div>
     <div class="areaA3">
         <div class="areaA3-1">
-            <p>Короткие нарды</p>
+            <p class="tableHeader">Короткие нарды</p>
             <table class="leaders">
                 <tbody>
                     <tr>
-                        <td>1</td>
+                        <td><img src="{% static 'image/medal1.png' %}" style="height: 40px; width: auto;"></td>
                         <td>Давид</td>
                         <td>2406</td>
                     </tr>
                     <tr>
-                        <td>2</td>
+                        <td><img src="{% static 'image/medal2.png' %}" style="height: 40px; width: auto;"></td>
                         <td>Артур</td>
-                        <td>1946</td>
+                        <td>2155</td>
                     </tr>
                     <tr>
-                        <td>3</td>
+                        <td><img src="{% static 'image/medal3.png' %}" style="height: 40px; width: auto;"></td>
                         <td>Арсен</td>
-                        <td>1700</td>
+                        <td>2075</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="areaA3-2">
-            <p>Длинные нарды</p>
+            <p class="tableHeader">Длинные нарды</p>
             <table class="leaders">
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Давид</td>
-                        <td>2406</td>
+                        <td><img src="{% static 'image/medal1.png' %}" style="height: 40px; width: auto;"></td>
+                        <td>Сурен</td>
+                        <td>2400</td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>Артур</td>
-                        <td>1946</td>
+                        <td><img src="{% static 'image/medal2.png' %}" style="height: 40px; width: auto;"></td>
+                        <td>Тигран</td>
+                        <td>2303</td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>Арсен</td>
-                        <td>1700</td>
+                        <td><img src="{% static 'image/medal3.png' %}" style="height: 40px; width: auto;"></td>
+                        <td>Армен</td>
+                        <td>2250</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <div class="areaA4">
+        <p class="tableHeader">Зал ожидания</p>
         <table>
-            <thead>
-                <tr>
-                    <td>Ник</td>
-                    <td>Рейтинг</td>
-                    <td>Тип игры</td>
-                </tr>
-            </thead>
             <tbody>
-                <tr>
-                    <td>Давид</td>
-                    <td>2406</td>
-                    <td>Короткие</td>
-                </tr>
-                <tr>
-                    <td>Артур</td>
-                    <td>1946</td>
-                    <td>Длинные</td>
-                </tr>
-                <tr>
-                    <td>Арсен</td>
-                    <td>1700</td>
-                    <td>Длинные</td>
-                </tr>
-                <tr>
-                    <td>Карен</td>
-                    <td>1426</td>
-                    <td>Длинные</td>
-                </tr>
+                {% for data in waiting %}
+                    <tr>
+                        <td>{{ data.0 }}</td>
+                        <td>{{ data.1 }}</td>
+                        <td>{{ data.2 }}</td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

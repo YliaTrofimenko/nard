@@ -1,35 +1,45 @@
 :root {
-    --color-black: #000000;
-    --color-basic: #C2CBA0;
-    --color-light-basic: #f1f7dc;
-    --color-selection: #00000010;
-    --color-menu: #a1ac7c;
-    --color-menu-selection: #C2CBA0;
-    --color-submenu: #a1ac7c;
-    --color-submenu-selection: #C2CBA0;
+    --color-black: #353535;
+    --color-line: #dee2e6;
 
-    --color-button: #a1ac7c;
+    --color-basic: #f8f9fd;
+    --color-dark-basic: #ffffff;
+    --color-selection: #00000010;
+
+    --color-menu: #ffffff;
+    --color-menu-selection: #00000010;
+    --color-submenu: #867d74;
+    --color-submenu-selection: #00000010;
+    --color-menu-active: #dceada;
+    --color-menu-active-text: #548024;
+    --color-shadow: #00000020;
+
+    --color-button: #82bb44;
+    --color-button-text: #ffffff;
+    --color-button2: transparent;
+    --color-button2-text: #6c757d;
+    --color-button2-border: #8a939a;
+    --color-button3: #e6e9ec;
+    --color-button3-text: #5f5f5f;
 
 	--width-menu: 200px;
 }
-
 
 body {
     margin: 0;                          /* Отступы от краёв экрана */
     background: var(--color-basic);        /* Фоновый цвет страницы */
 }
 
-.body {
+.content {
     margin-left: var(--width-menu);
     padding: 20px;
 }
 
-p, span, label, a, caption, button, h1 {
-	font-weight: bold;
-    font-size: 16px;           /* Размер шрифта */
-    font-family: Arial;        /* Шрифт */
-    margin: 0;                 /* Убираем отступы */
-    padding: 0;                /* Убираем отступы */
+p, span, label, a, caption, button, h1, h2, fieldset {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
     color: var(--color-black);
 }
 
@@ -42,12 +52,13 @@ h1 {
     margin-bottom: 20px;
 }
 
-a, button {
-    cursor: pointer;
+h2 {
+    font-size: 22px;
+    margin: 20px;
 }
 
-button {
-    background-color: var(--color-button);
+a, button {
+    cursor: pointer;
 }
 
 table {
@@ -57,14 +68,57 @@ table {
 }
 
 td {
-    border-bottom: 1px solid var(--color-black);
     text-align: center;
-    font-size: 16px;
-    font-family: Arial;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-black);
+}
+
+tr {
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-black);
 }
 
 table tr {
+    border-bottom: 1px solid var(--color-line);
     height: 40px;
+}
+
+table tr:last-child {
+    border-bottom: none;
+}
+
+.tableHeader {
+	font-weight: bold;
+}
+
+.btnAccent {
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    border: none;
+    padding: 1.05vh 1.4vw;
+    margin: 0 0.8vw;
+    border-radius: 5px;
+}
+
+.btnNoAccent {
+    background-color: var(--color-button2);
+    color: var(--color-button2-text);
+    border: 1px solid var(--color-button2-border);
+    padding: 1.05vh 1.4vw;
+    margin: 0 0.8vw;
+    border-radius: 5px;
+}
+
+.btnNoActive {
+    background-color: var(--color-button3);
+    color: var(--color-button3-text);
+    border: none;
+    padding: 1.05vh 1.4vw;
+    margin: 0 0.8vw;
+    border-radius: 5px;
 }
 
 /* ------------ МЕНЮ --------------- */
@@ -81,6 +135,7 @@ nav {
 	height: 100vh;
 	background-color: var(--color-menu);
 	color: var(--color-black);
+    box-shadow: 0px 0px 20px  var(--color-shadow);
 }
 
 ul {
@@ -127,4 +182,12 @@ ul > li > a:hover {
 /* Показываем подменю при наведении */
 ul > li:hover .submenu {
     display: block;
+}
+
+.active {
+    background-color: var(--color-menu-active);
+}
+
+.active a {
+    color: var(--color-menu-active-text);
 }

@@ -7,22 +7,27 @@
 
 {% block CONTENT %}
 <div class="profile-container">
-    <div class="profile-header">
-        <img src="{{ user.profile.avatar.url }}" alt="Аватар" class="avatar">
-        <h2>{{ user.username }}</h2>
-        <p>Рейтинг: {{ user.profile.rating }}</p>
-        {% if request.user == user %}
-            <a href="#" class="btn">Редактировать профиль</a>
-        {% endif %}
+    <h1>Профиль пользователя</h1>
+    <div class="profile-card">
+      <div class="avatar">
+        <!-- можно показать настоящую аватарку, если храните; иначе placeholder -->
+        <img src="{% static 'image/profile.png' %}" alt="avatar">
+      </div>
+      <div class="info">
+        <p><strong>Имя:</strong> {{ user.get_full_name|default:user.username }}</p>
+        <p><strong>Логин:</strong> {{ user.username }}</p>
+        <p><strong>Email: </strong>yulyagoogle@mail.ru {{ user.email }}</p>
+        <p><strong>Сыграно партий: </strong>23 {{ games_played }}</p>
+        <p><strong>Зарегистрирован: </strong>27 апреля 2025 {{ games_played }}</p>
+        <!-- кнопка редактировать профиль, сменить пароль -->
+        {% comment %} <a href="{% url 'account_change_password' %}" class="btn">Сменить пароль</a> {% endcomment %}
+      </div>
     </div>
-
-    <div class="profile-stats">
-        <h3>Статистика</h3>
-        <ul>
-            <li>Игр всего: {{ user.profile.total_games }}</li>
-            <li>Побед: {{ user.profile.wins }}</li>
-            <li>Поражений: {{ user.profile.losses }}</li>
-        </ul>
+    <div class="profile-card" style='margin-top: 20px'>
+      <div class="info">
+        <h1 class="gg">Мой рейтинг: 1852</h1>
+        <img src="{% static 'image/reiting.png' %}" alt="">
+      </div>
     </div>
 </div>
 {% endblock CONTENT %}

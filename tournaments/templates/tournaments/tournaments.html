@@ -2,51 +2,139 @@
 {% load static %}
 
 {% block CSS %}
-<link rel="stylesheet" href="{% static "css/leaders.css" %}">
+<link rel="stylesheet" href="{% static "css/tournaments.css" %}">
 {% endblock CSS %}
 
 {% block CONTENT %}
 <h1>Турниры</h1>
     <div class="tabLeader">
         <input checked id="tab-btn-1" type="radio" name="tab-btn">
-        <label class="btn" for="tab-btn-1">Предстоящие турниры</label>
+        <label class="btnNoActive" for="tab-btn-1">Предстоящие турниры</label>
         <input id="tab-btn-2" type="radio" name="tab-btn">
-        <label class="btn" for="tab-btn-2">Прошедшие турниры</label>
+        <label class="btnNoActive" for="tab-btn-2">Прошедшие турниры</label>
 
         <div class="tab-content" id="ratingAll">
-            <section class="upcoming-tournaments">
-                <h2>Предстоящие турниры</h2>
-                <div class="tournament-card">
-                    <h3>Весенний Кубок</h3>
-                    <p>Дата: 5 мая 2025</p>
-                    <p>Участников: 16 / 32</p>
-                    <button class="btn">Присоединиться</button>
+            <div class="containerA">
+                <div class="areaA1">
+                    <fieldset class='fieldsetGlav'>
+                        <legend>Ежедневный турнир</legend>
+                        <div>
+                            <p>Дата: завтра</p>
+                        </div>
+                        <div>
+                            <p>Участников: 8 / ..</p>
+                        </div>
+                        <button class="btnNoAccent">Присоединиться</button>
+                    </fieldset>
                 </div>
-        
-                <div class="tournament-card">
-                    <h3>Блиц Турнир</h3>
-                    <p>Дата: 12 мая 2025</p>
-                    <p>Участников: 8 / 16</p>
-                    <button class="btn">Присоединиться</button>
+                <div class="areaA2">
+                    <fieldset class='fieldsetGlav'>
+                        <legend>Блиц Турнир</legend>
+                        <div>
+                            <p>Дата: 15 июня 2025</p>
+                        </div>
+                        <div>
+                            <p>Участников: 8 / 16</p>
+                        </div>
+                        <button class="btnNoAccent">Присоединиться</button>
+                    </fieldset>
                 </div>
-            </section>
+                <div class="areaA3">
+                    <fieldset class='fieldsetGlav'>
+                        <legend>SitAndGo</legend>
+                        <div>
+                            <p>Дата: 20 июня 2025</p>
+                        </div>
+                        <div>
+                            <p>Участников: 16 / ..</p>
+                        </div>
+                        <button class="btnNoAccent">Присоединиться</button>
+                    </fieldset>
+                </div>
+                <div class="areaA4">
+                    <fieldset class='fieldsetGlav'>
+                        <legend>Летний Кубок</legend>
+                        <div>
+                            <p>Дата: 25 июня 2025</p>
+                        </div>
+                        <div>
+                            <p>Участников: 16 / 32</p>
+                        </div>
+                        <button class="btnNoAccent">Присоединиться</button>
+                    </fieldset>
+                </div>
+            </div>
         </div>
 
         <div class="tab-content" id="ratingMonth">
-            <section class="past-tournaments">
-                <h2>Прошедшие турниры</h2>
-                <div class="tournament-card past">
-                    <h3>Зимний Турнир</h3>
-                    <p>Дата: 10 февраля 2025</p>
-                    <p>Победитель: <strong>BackgammonKing</strong></p>
+            <div class="containerA">
+                <div class="areaA1">
+                    <fieldset class='fieldsetGlav'>
+                        <legend>Зимний Турнир</legend>
+                        <div>
+                            <p>Дата: 10 февраля 2025</p>
+                        </div>
+                        <div>
+                            <p>Победитель: <strong>BackgammonKing</strong></p>
+                        </div>
+                    </fieldset>
                 </div>
-        
-                <div class="tournament-card past">
-                    <h3>Новогодний Кубок</h3>
-                    <p>Дата: 25 декабря 2024</p>
-                    <p>Победитель: <strong>LuckyDice</strong></p>
+                <div class="areaA2">
+                    <fieldset class='fieldsetGlav'>
+                        <legend>Блиц Турнир</legend>
+                        <div>
+                            <p>Дата: 15 мая 2025</p>
+                        </div>
+                        <div>
+                            <p>Победитель: <strong>Timur0101</strong></p>
+                        </div>
+                    </fieldset>
                 </div>
-            </section>
+                <div class="areaA3">
+                    <fieldset class='fieldsetGlav'>
+                        <legend>SitAndGo</legend>
+                        <div>
+                            <p>Дата: 20 мая 2025</p>
+                        </div>
+                        <div>
+                            <p>Победитель: <strong>Arsen228</strong></p>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="areaA4">
+                    <fieldset class='fieldsetGlav'>
+                        <legend>Новогодний Кубок</legend>
+                        <div>
+                            <p>Дата: 25 декабря 2024</p>
+                        </div>
+                        <div>
+                            <p>Победитель: <strong>LuckyDice</strong></p>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="areaA5">
+                    <fieldset class='fieldsetGlav'>
+                        <legend>Чемпионат</legend>
+                        <div>
+                            <p>Дата: 3 марта 2025</p>
+                        </div>
+                        <div>
+                            <p>Победитель: <strong>Nagibator3000</strong></p>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="areaA6">
+                    <fieldset class='fieldsetGlav'>
+                        <legend>Весенний Турнир</legend>
+                        <div>
+                            <p>Дата: 15 марта 2025</p>
+                        </div>
+                        <div>
+                            <p>Победитель: <strong>Terminator2000</strong></p>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock CONTENT %}

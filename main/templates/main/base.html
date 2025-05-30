@@ -5,37 +5,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}">
 
     <link rel="stylesheet" href="{% static "css/base.css" %}">
     {% block CSS %}{% endblock CSS %}
 
-    {% block JS %}{% endblock JS %}
     <title>Нарды</title>
 </head>
 
 <body>
     <nav>
         <ul>
-            <li> <a href="{% url "main:home" %}">Главная</a> </li>
-            <li> <a href="{% url "game:create_game" %}">Играть</a>
-                <ul class="submenu">
+            <img src="{% static 'image/nard-logo.png' %}" style="height: auto; width: 100%;">
+            <li class="{% if request.path == '/' %}active{% endif %}"> <a href="{% url "main:home" %}">Главная</a> </li>
+            <li class="{% if request.path == '/game/' %}active{% endif %}"> <a href="{% url "game:create_game" %}">Играть</a>
+                {% comment %} <ul class="submenu">
                     <li><a href="#">Длинные</a></li>
                     <li><a href="#">Короткие</a></li>
-                </ul>
+                </ul> {% endcomment %}
             </li>
-            <li> <a href="{% url "tournaments:tournaments" %}">Турниры</a>
-                <ul class="submenu">
+            <li class="{% if request.path == '/tournaments/' %}active{% endif %}"> <a href="{% url "tournaments:tournaments" %}">Турниры</a>
+                {% comment %} <ul class="submenu">
                     <li><a href="#">Текущие</a></li>
                     <li><a href="#">Будущие</a></li>
-                </ul>
+                </ul> {% endcomment %}
             </li>
-            <li> <a href="{% url "users:leaders" %}">Лидеры</a> </li>
-            <li> <a href="{% url "users:profile" %}">Настройки</a> </li>
+            <li class="{% if request.path == '/leaders/' %}active{% endif %}"> <a href="{% url "users:leaders" %}">Лидеры</a> </li>
+            <li class="{% if request.path == '/profile/' %}active{% endif %}"> <a href="{% url "users:profile" %}">Профиль</a> </li>
         </ul>
     </nav>
-    <div class="body">
+    <div class="content">
         {% block CONTENT %}{% endblock CONTENT %}
-        {% block FOOTER %}{% endblock FOOTER %}
     </div>
+    {% block JS %}{% endblock JS %}
 </body>
 </html>

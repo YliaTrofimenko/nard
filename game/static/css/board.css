@@ -1,0 +1,123 @@
+:root {
+    --board-bg: url("../board-bg.jpg");
+}
+
+#board {
+    position: relative;
+    width: calc(130vh - 50px);
+    height: calc(100vh - 50px);
+    background-size:cover;
+    /* border: 5px solid #8b5e3c; */
+    object-fit: fill;
+    border-radius: 20px;
+    background-image: var(--board-bg);
+}
+
+.piece {
+    position: absolute;
+    width: calc(((130vh - 50px) / 12) - 25px);
+    height: calc(((130vh - 50px) / 12) - 25px);
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #444;
+    align-items: center;
+}
+
+.black {
+    background-color: black;
+}
+
+.point {
+    position: absolute;
+    width: calc((130vh - 50px) / 12);
+    height: calc((100vh - 50px) / 2);
+    /* background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid #444; */
+    transition: background 0.2s;
+}
+
+.point:hover {
+    background-color: rgba(255, 255, 255, 0.308);
+}
+
+  .dice-container {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  #roll-button {
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+  }
+  .dice {
+    display: inline-block;
+    margin-left: 1rem;
+  }
+  .die {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    margin: 0 .25rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 2px solid #444;
+    border-radius: .25rem;
+    background: #fff;
+    text-align: center;
+  }
+
+
+  .chat-container {
+  width: 390px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 325px;
+  background: #f9f9f9;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 0.5rem;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+.chat-form {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+#chat-input {
+  flex: 1;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0 0 0 10px;
+  outline: none;
+}
+
+.chat-form button {
+  padding: 0 1rem;
+  border: none;
+  background: var(--color-button);
+  color:  var(--color-button-text);
+  border-radius: 0 0 10px 0;
+  cursor: pointer;
+}
+
+
+.containerA {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "areaA1 areaA2"
+        "areaA1 areaA3";
+}
+.areaA1 { grid-area: areaA1; }
+.areaA2 { grid-area: areaA2; }
+.areaA3 { grid-area: areaA3; }

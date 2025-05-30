@@ -23,12 +23,34 @@
 
 .containerA {
     display: grid;
-    grid-template-columns: 2.2fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 40px;
     grid-auto-flow: row;
     grid-template-areas:
-        "areaA1 areaA2";
+        "areaA1 areaA2"
+        "areaA3 areaA4";
+    margin-top: 20px;
 }
 .areaA1 { grid-area: areaA1; }
 .areaA2 { grid-area: areaA2; }
+.areaA3 { grid-area: areaA3; }
+.areaA4 { grid-area: areaA4; }
+
+.fieldsetGlav {
+    padding-left: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+}
+
+.fieldsetGlav legend {
+    padding-bottom: 15px;
+}
+
+.fieldsetGlav p {
+    margin-bottom: 10px;
+}
+
+.btnNoAccent {
+    margin-bottom: 15px;
+}

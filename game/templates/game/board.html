@@ -1,0 +1,44 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load game_extras %}
+
+{% block CSS %}
+  	<link rel="stylesheet" href="{% static 'css/board.css' %}">
+    {% comment %} <style>
+        #board {
+            background-image: url("{% static 'board-bg.jpg' %}");
+        }
+    </style> {% endcomment %}
+{% endblock %}
+
+{% block CONTENT %}
+    <div class="containerA">
+        <div class="areaA1">
+            <div id="board" data-game-id="{{ game_id }}" data-game-type="{{ game_type }}" data-side="{{ side }}"> </div>
+        </div>
+
+        <div class="areaA2">
+            <div class="dice-containerA">
+                <button id="roll-button">🎲 Бросить кубики</button>
+                <div class="dice">
+                    <span id="die1" class="die">–</span>
+                    <span id="die2" class="die">–</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="areaA3">
+            <div class="chat-container">
+                <div id="chat-messages" class="chat-messages"></div>
+                <form id="chat-form" class="chat-form">
+                    <input type="text" id="chat-input" placeholder="Введите сообщение..." autocomplete="off" />
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block JS %}
+	<script type="module" src="{% static 'js/board.js' %}"></script>
+{% endblock %}

@@ -9,9 +9,9 @@
     <h1>Таблица лидеров по рейтингу</h1>
     <div class="tabLeader">
         <input checked id="tab-btn-1" type="radio" name="tab-btn">
-        <label class="btn" for="tab-btn-1">Рейтинг за все время</label>
+        <label class="btnNoActive" for="tab-btn-1">Рейтинг за все время</label>
         <input id="tab-btn-2" type="radio" name="tab-btn">
-        <label class="btn" for="tab-btn-2">Рейтинг за месяц</label>
+        <label class="btnNoActive" for="tab-btn-2">Рейтинг за месяц</label>
 
         <div class="tab-content" id="ratingAll">
             <div class="containerA">
@@ -21,21 +21,20 @@
                         <thead>
                             <tr>
                                 <th>№</th>
-                                <th colspan='2'>Шахматист</th>
-                                <th colspan='2'>Рейтинг</th>
-                                <th colspan='2'>Задачи</th>
+                                <th></th>
+                                <th style="text-align: left;">Игрок</th>
+                                <th>Рейтинг</th>
+                                <th>Кол-во игр</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for data in leaderboard %}
-                                <tr onclick="document.location = {{ data.0 }}">
+                                <tr onclick="document.location = {{ data.3 }}">
+                                    <td>{{ forloop.counter }}</td>
+                                    <td><img src="{% static 'image/user.png' %}" style="height: auto; width: 40px;"></td>
+                                    <td style="text-align: left;">{{ data.0 }}</td>
                                     <td>{{ data.1 }}</td>
-                                    <td><div style="background-image: url({{ data.2 }})"></div></td>
-                                    <td>{{ data.3 }}</td>
-                                    <td>{{ data.4 }}</td>
-                                    <td>+{{ data.5 }}</td>
-                                    <td>{{ data.6 }}</td>
-                                    <td>+{{ data.7 }}</td>
+                                    <td>{{ data.2 }}</td>
                                 </tr>
                             {% endfor %}
                             {% comment %} <tr onclick="document.location = '/user/Серый Волк';"> {% endcomment %}
@@ -45,7 +44,7 @@
                 </div>
 
                 <div class="areaA2">
-                    <h2>Мое положение</h2>
+                    {% comment %} <h2>Мое положение</h2>
                     <table>
                         <tr>
                             <td>По рейтингу</td>
@@ -54,6 +53,16 @@
                         <tr>
                             <td>Средний рейтинг игроков</td>
                             <td>{{ place_in_rating }} / {{ rating }}</td>
+                        </tr>
+                    </table> {% endcomment %}
+                    <table>
+                        <tr style="border: none;">
+                            <td style="text-align: right;">Мой рейтинг</td>
+                            <td>1536</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Место в рейтинге</td>
+                            <td>97</td>
                         </tr>
                     </table>
                 </div>
@@ -92,7 +101,7 @@
                 </div>
 
                 <div class="areaA2">
-                    <h2>Мое положение</h2>
+                    {% comment %} <h2>Мое положение</h2>
                     <table>
                         <tr>
                             <td>По рейтингу</td>
@@ -101,6 +110,16 @@
                         <tr>
                             <td>Средний рейтинг игроков</td>
                             <td>{{ place_in_rating }} / {{ rating }}</td>
+                        </tr>
+                    </table> {% endcomment %}
+                    <table>
+                        <tr style="border: none;">
+                            <td style="text-align: right;">Мой рейтинг</td>
+                            <td>1536</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">Место в рейтинге</td>
+                            <td>97</td>
                         </tr>
                     </table>
                 </div>
